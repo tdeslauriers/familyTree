@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -97,4 +98,22 @@ public class Human implements Serializable {
 	@Size(min = 7, max = 10)
 	@Column(name = "phone")
 	private String phone;
+	
+	@OneToMany(
+			mappedBy = "human",
+			fetch = FetchType.LAZY)
+	@JsonManagedReference(value = "human-family")
+	private Set<Family> family;
+	
+	@OneToMany(
+			mappedBy = "human1",
+			fetch = FetchType.LAZY)
+	@JsonManagedReference(value = "human-relationship1")
+	private Set<Relationship> relationship1;
+	
+	@OneToMany(
+			mappedBy = "human2",
+			fetch = FetchType.LAZY)
+	@JsonManagedReference(value = "human-relationship2")
+	private Set<Relationship> relationship2;
 }

@@ -1,0 +1,22 @@
+package world.deslauriers.tree.domain;
+
+public enum RoleName {
+
+	HUSBAND,
+	WIFE,
+	FATHER,
+	MOTHER,
+	BROTHER,
+	DAUGHTER,
+	GRANDFATHER,
+	GRANDMOTHER,
+	UNCLE,
+	AUNT,
+	NEPHEW,
+	NIECE,
+	COUSIN,
+	STEP_FATHER,
+	STEP_MOTHER,
+	STEP_BROTHER,
+	STEP_SISTER
+}

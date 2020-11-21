@@ -20,6 +20,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -65,5 +66,6 @@ public class Address implements Serializable {
 			joinColumns = {@JoinColumn(referencedColumnName = "address_id")},
 			inverseJoinColumns = {@JoinColumn(referencedColumnName = "human_id")})
 	@JsonBackReference(value = "human-address")
+	@JsonIgnore
 	private Set<Human> humans = new HashSet<>();
 }
